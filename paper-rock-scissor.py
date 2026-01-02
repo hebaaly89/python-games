@@ -8,7 +8,8 @@ MAX_TRIALS = 3
 
 def get_user_choice():
     trials = 0
-    while True and trials < MAX_TRIALS:
+    check = True
+    while check and trials < MAX_TRIALS:
         user_choice = input(
            CHOICES_PROMPT
         ).lower()
