@@ -17,7 +17,9 @@ def get_user_choice():
         else:
             print("Invalid input. Please try again.")
             trials += 1
-    
+    print("You have reached the maximum number of trials.")
+    return None
+
 
 def get_computer_choice():
     return choice(GAME_OPTIONS)
@@ -26,11 +28,11 @@ def get_computer_choice():
 def play_game():
     user_choice = get_user_choice()
     computer_choice = get_computer_choice()
-    print("You chose: {}".format(user_choice))
-    print("Computer chose: {}".format(computer_choice))
+    print(f"You chose: {user_choice}")
+    print(f"Computer chose: {computer_choice}")
     if user_choice == computer_choice:
         print("It's a tie!")
-    elif (user_choice =="rock" and computer_choice == "scissors") or \
+    elif (user_choice == "rock" and computer_choice == "scissors") or \
          (user_choice == "scissors" and computer_choice == "paper") or \
          (user_choice == "paper" and computer_choice == "rock"):
         print("You win!")
@@ -48,6 +50,6 @@ def main():
     else:
         print("Thank you for playing!")
 
+
 if __name__ == "__main__":
     main()
-    
