@@ -1,7 +1,16 @@
 from random import choice
+from enum import Enum
 
 TRIALS = 3
-GAME_OPTIONS = ["rock", "paper", "scissors"]
+
+
+class GameOptions(Enum):
+    ROCK = "rock"
+    PAPER = "paper"
+    SCISSORS = "scissors"
+
+
+GAME_OPTIONS = [option.value for option in GameOptions]
 
 
 def get_user_input():
