@@ -8,7 +8,7 @@ This repository contains a collection of simple Python games.
 
 A classic command-line implementation of the Rock, Paper, Scissors game where you compete against the computer.
 
-**File:** `paper-rock-scissor.py`
+**File:** `paper_rock_scissor.py`
 
 #### 🎮 How It Works
 
@@ -50,5 +50,5 @@ Ensure you have Python 3 installed.
 Run the game from the terminal:
 
 ```bash
-python3 paper-rock-scissor.py
+python3 paper_rock_scissor.py
 ```
