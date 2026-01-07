@@ -13,14 +13,15 @@ class GameOptions(Enum):
 GAME_OPTIONS = [option.value for option in GameOptions]
 
 
-def get_user_input():
-    return input("Enter your choice (rock, paper, scissors): ").lower()
+def get_user_input(msg):
+    return input(msg).lower()
 
 
 def get_user_choice():
     trials = 0
     while trials < TRIALS:
-        user_input = get_user_input()
+        msg = "Enter your choice (rock, paper, scissors): "
+        user_input = get_user_input(msg)
         if user_input in GAME_OPTIONS:
             return user_input
         else:
@@ -36,6 +37,8 @@ def get_computer_choice():
 
 def play_game():
     user_choice = get_user_choice()
+    if user_choice is None:
+        return
     computer_choice = get_computer_choice()
     print(f"You chose: {user_choice}")
     print(f"Computer chose: {computer_choice}")
@@ -47,17 +50,16 @@ def play_game():
         print("You win!")
     else:
         print("Computer wins!")
+    play_again = get_user_input("Do you want to play again? (y/n): ")
+    if play_again == "y":
+        play_game()
+    else:
+        print("Thank you for playing!")
 
 
 def main():
     print("Welcome to Rock, Paper, Scissors!")
     play_game()
-    print("Do you want to play again? (y/n): ")
-    play_again = input().lower()
-    if play_again == "y":
-        main()
-    else:
-        print("Thank you for playing!")
 
 
 if __name__ == "__main__":
